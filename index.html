@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+
+  <!-- ==== STYLE SHEETS ==== -->
+
+  <!-- VENDOR -->
+  <link rel="stylesheet" href="vendor/css/vendor.css">
+
+  <!-- OURS -->
+  <link rel="stylesheet" href="css/main.css">
+
+
+  <!-- ==== JAVASCRIPT ==== -->
+
+
+  <!-- VENDOR -->
+  <script src="vendor/js/vendor.js"></script>
+  
+  <!-- SOUNDCLOUD -->
+
+  <script src="//connect.soundcloud.com/sdk.js"></script>
+  <script>
+    SC.initialize({
+      client_id: "d7323d5e8e05c02dd17a259c0a0f55d2",
+      redirect_uri: "http://localhost:8000/callback.html",
+    });
+  </script>
+
+  <!-- TEMPLATES -->
+  <script src="js/templates.js"></script>
+
+  <!-- OURS -->
+  <script src="js/models.js"></script>
+  <script src="js/views.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/main.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="logo">LOGO</div>
+  <div class="navigation">
+   <!--  <div class="nav-btn1">
+      <a data-name="genres" href="/genres">Genres</a>
+    </div>
+    <div class="nav-btn2">
+      <a data-name="search" href="/search">Search</a>
+    </div>
+    <div class="nav-btn2">
+      <a data-name="search" href="/search">Search</a>
+    </div> -->
+  </div>
+</header>
+
+<div class="main">
+  <section class="upper">
+    <div class="upper-left">
+      <h2>Genres</h2>
+        <!-- <ul>Genres
+          <li><a data-genre="pop" href="#" alt="pop">Pop</li>
+          <li><a data-genre="rock" href="#" alt="rock">Rock</li>
+          <li><a data-genre="folk" href="#" alt="folk">Folk</li>
+          <li><a data-genre="rap" href="#" alt="rap">Rap</li>
+          <li><a data-genre="country" href="#" alt="country">Country</li>
+          <li><a data-genre="80s" href="#" alt="80's">80s</li>
+        </ul> -->
+    </div>
+    <div class="upper-right">
+       <!-- <thead>
+        <tr>
+          <th>Artwork</th>
+          <th></th>
+          <th>Title</th>
+          <th>Genre</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <td class="artwork">
+          <img src="{{artwork_url}}" alt="{{title}}">
+        </td>
+        <td class="play">
+          {{#if streamable}}
+          <i class="fa fa-play-circle"></i>
+          {{else}}
+          <i class="fa fa-ban"></i>
+          {{/if}}
+        </td>
+        <td class="title">
+          <span>{{title}}</td>
+        </td>
+        <td class="genre">
+          <span>{{genre}}</td>
+        </td>
+        <td class="duration">
+          <span>{{duration}}</span>
+        </td>
+      </tbody> -->
+    </div>
+  </section><!--upper-->
+
+ <section class="middle">
+ <div>
+  <h3>Hate 80's music? Go ahead and search...</h3>
+ </div>
+  <div class="search">
+    <form class="search-form" action="" method="">
+      <span></span>
+      <input type = "text" class="search-field" name="search" placeholder="enter keywords">
+      <input type = "submit" class = "search-button" name="submit"value="Search">
+    </form>
+  </div><!-- search ends here --> 
+   
+  </section><!--middle-->
+
+  <section class="lower">
+    <div class="lower-left">
+      <h2>Favorites</h2>
+     <!--  <ul>
+        <li><a data-artist="madonna" href="#" alt="madonna">Madonna</li>
+        <li><a data-artist="cyndi_lauper" href="#" alt="cyndi_lauper">Cyndi Lauper</li>
+        <li><a data-artist="prince" href="#" alt="prince">Prince</li>
+      </ul> -->
+    </div>
+    <div class="lower-right">
+      <div class="image">img1</div>
+      <div class="image">img2</div>
+      <div class="image">img3</div>
+      <div class="image">img4</div>
+      <div class="image">img5</div>
+      <div class="image">img6</div>
+      <div class="image">img7</div>
+      <div class="image">img8</div>
+      <div class="image">img9</div>
+    </div>
+  </section><!--lower-->
+</div>
+
+<footer></footer>
+
+</body>
+</html>

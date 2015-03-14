@@ -1,0 +1,155 @@
+body {
+  background-color: #949899;
+}
+header {
+  width: 960px;
+  height: 100px;
+  background-color: #c1db28;
+  margin: auto;
+}
+header .logo {
+  float: left;
+  width: 200px;
+  height: 100%;
+  background-color: grey;
+}
+header .navigation .nav-btn1 {
+  margin-left: 130px;
+}
+header .navigation .nav-btn1,
+header .navigation .nav-btn2,
+header .navigation .nav-btn3 {
+  float: left;
+  width: 200px;
+  height: 100%;
+  line-height: 100px;
+  vertical-align: bottom;
+}
+header .navigation .nav-btn1 a,
+header .navigation .nav-btn2 a,
+header .navigation .nav-btn3 a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+.main {
+  width: 960px;
+  height: 900px;
+  margin: auto;
+  margin-top: 10px;
+}
+.main .upper {
+  width: 100%;
+  height: 500px;
+}
+.main .upper .upper-left {
+  float: left;
+  width: 200px;
+  height: 600px;
+  background-color: #27b4db;
+}
+.main .upper .upper-left h2 {
+  font-size: 24px;
+}
+.main .upper .upper-left .genres {
+  list-style: none;
+}
+.main .upper .upper-left .genres li a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+.main .upper .upper-right {
+  width: 720px;
+  height: 600px;
+  overflow: hidden;
+  float: left;
+  padding-left: 40px;
+  background-color: #da56f4;
+}
+.main .upper .upper-right .track-list {
+  border-collapse: collapse;
+}
+.main .upper .upper-right .track-list th {
+  font-size: 20px;
+  line-height: 30px;
+  background-color: grey;
+}
+.main .upper .upper-right .track-list .artwork img {
+  width: 50px;
+  height: 50px;
+  font-size: 10px;
+  color: #999;
+}
+.main .upper .upper-right .track-list tbody tr {
+  background: #f0f0f0;
+}
+.main .upper .upper-right .track-list td span {
+  padding: 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px;
+  display: inline-block;
+}
+.main .upper .upper-right .track-list td i {
+  font-size: 28px;
+  color: #45789a;
+  margin-left: 15px;
+  vertical-align: -5px;
+}
+.main .upper .upper-right .track-list td i:hover {
+  color: #459a68;
+  cursor: pointer;
+}
+.main .middle {
+  clear: both;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  background-color: #666a6b;
+}
+.main .middle div {
+  height: 100%;
+  float: left;
+  text-align: center;
+  line-height: 50px;
+}
+.main .middle div h3 {
+  color: white;
+}
+.main .middle .search {
+  float: right;
+  width: 300px;
+  height: 100%;
+  background-color: grey;
+}
+.main .lower .lower-left {
+  width: 200px;
+  height: 100%;
+  float: left;
+  background-color: #f322b4;
+}
+.main .lower .lower-right {
+  width: 760px;
+  height: 100%;
+  float: left;
+  background-color: #f2ec22;
+}
+.main .lower .lower-right .image {
+  width: 100px;
+  height: 100px;
+  margin: 30px;
+  background-color: grey;
+  border-radius: 3px;
+  padding: 5px;
+  float: left;
+}
+footer {
+  clear: both;
+  width: 960px;
+  height: 100px;
+  margin: auto;
+  background-color: #666a6b;
+}

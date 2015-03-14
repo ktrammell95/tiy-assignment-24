@@ -1,0 +1,28 @@
+{
+  "name": "tiy-assignment-24",
+  "version": "1.0.0",
+  "description": "music player",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "music",
+    "backbone",
+    "soundcloud",
+    "firebase"
+  ],
+  "author": "Katherine Trammell",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-declare": "^0.3.0",
+    "gulp-handlebars": "^4.0.0",
+    "gulp-less": "^3.0.1",
+    "gulp-wrap": "^0.11.0",
+    "main-bower-files": "^2.6.1",
+    "underscore": "^1.8.2"
+  }
+}
