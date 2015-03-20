@@ -3,7 +3,8 @@ var favorites = new FavoriteArtists();
 favorites.push({name: "Madonna"});
 
 
-var ArtistsExample = Backbone.Firebase.Collection.extend({url: "https://kt-musicapp.firebaseio.com/example/artists"});
+var ArtistsExample = Backbone.Firebase.Collection.extend({
+  url: "https://kt-musicapp.firebaseio.com/example/artists"});
 var example = new ArtistsExample();
 example.push({name: "Bon Jovi"});
 

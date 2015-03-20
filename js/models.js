@@ -1,4 +1,11 @@
-// ======================  TRACKS ====================== //
+//Models are the heart of any JavaScript application, 
+// containing the interactive data as well as a large 
+// part of the logic surrounding it: conversions, validations, 
+// computed properties, and access control. 
+// You extend Backbone.Model with your domain-specific methods, 
+// and Model provides a basic set of functionality for managing changes.
+
+// ======================  MODEL ====================== //
 
 var Track = Backbone.Model.extend({
 
@@ -25,11 +32,15 @@ var Track = Backbone.Model.extend({
     }.bind(this));
   }
 
-  // favorited: function() {
-  //   this.trigger("favorited");
-  // }
-
 });
+
+// Collections are ordered sets of models. 
+// You can bind "change" events to be notified 
+// when any model in the collection has been modified, l
+// isten for "add" and "remove"events, fetch the collection 
+//from the server, and use a full suite of Underscore.js methods.
+
+// ======================  COLLECTIONS ====================== //
 
 var TrackCollection = Backbone.Collection.extend({
 
@@ -46,25 +57,19 @@ var TrackCollection = Backbone.Collection.extend({
       this.reset(tracks);
     }.bind(this));
   }
-//method search favorite collection to see if there is a favorite 
-  //with matching track id
-//then if get one back favorited method will return true
-//in trackview, use the favorited method if true filled in, else false
+
 });
 
-// ======================  Favorites ====================== //
-// var Favorites = Backbone.Model.extend({
+// ======================  FIREBASE ====================== //
+
+// var Fire = Backbone.Model.extend({
 
 // });
 
-//favorite model 
-//will have track id
-//function on each track on instance
+// var FavFireCollection = Backbone.Firebase.Collection.extend({
 
-var FavoriteCollection = Backbone.Firebase.Collection.extend({
+//   url: "https://kt-musicapp.firebaseio.com/favorites/artists",
+//   model: Fire
 
-  url: "https://kt-musicapp.firebaseio.com/favorites",
-  model: Track,
-
-});;
+// });
 

@@ -1,6 +1,14 @@
 this["JST"] = this["JST"] || {};
+this["JST"]["fav"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+    return "\n  <div class=\"song\">\n    <img class=\"image\" src=\"http://lorempixel.com/output/nightlife-q-c-600-600-5.jpg\" alt=\"title\">\n    <div class=\"play-btn\">\n        <i class=\"fa fa-play-circle\"></i>\n    </div>\n    <div class=\"title\">\n      <span>title 1</span>\n    </div>\n  </div><!--song-->";
+},"useData":true});
+this["JST"] = this["JST"] || {};
+this["JST"]["fav_list"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+    return "<h2>Favorites</h2>\n\n<li><a data-fav=\"pop\" href=\"#\" alt=\"pop\">Pop</li>\n";
+},"useData":true});
+this["JST"] = this["JST"] || {};
 this["JST"]["genre"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<li><a data-genre=\"pop\" href=\"#\" alt=\"pop\">Pop</li>\n<li><a data-genre=\"rock\" href=\"#\" alt=\"rock\">Rock</li>\n<li><a data-genre=\"folk\" href=\"#\" alt=\"folk\">Folk</li>\n<li><a data-genre=\"rap\" href=\"#\" alt=\"rap\">Rap</li>\n<li><a data-genre=\"country\" href=\"#\" alt=\"country\">Country</li>\n<li><a data-genre=\"80s\" href=\"#\" alt=\"80's\">80s</li>";
+    return "<h2>Genres</h2>\n\n<li><a data-genre=\"pop\" href=\"#\" alt=\"pop\">Pop</li>\n<li><a data-genre=\"rock\" href=\"#\" alt=\"rock\">Rock</li>\n<li><a data-genre=\"folk\" href=\"#\" alt=\"folk\">Folk</li>\n<li><a data-genre=\"rap\" href=\"#\" alt=\"rap\">Rap</li>\n<li><a data-genre=\"country\" href=\"#\" alt=\"country\">Country</li>\n<li><a data-genre=\"80s\" href=\"#\" alt=\"80's\">80s</li>";
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["nav"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
@@ -15,18 +23,6 @@ this["JST"]["track"] = Handlebars.template({"1":function(depth0,helpers,partials
     return "  <i class=\"fa fa-play-circle\"></i>\n";
 },"3":function(depth0,helpers,partials,data) {
     return "  <i class=\"fa fa-ban\"></i>\n";
-},"5":function(depth0,helpers,partials,data) {
-    var helper;
-
-  return "  <i class=\"fa fa-heart-o\" data-track-id=\""
-    + this.escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\"></i>\n";
-},"7":function(depth0,helpers,partials,data) {
-    var helper;
-
-  return "  <i class=\"fa fa-heart\" data-track-id=\""
-    + this.escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\"></i>\n";
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var stack1, helper, alias1=helpers.helperMissing, alias2="function", alias3=this.escapeExpression;
 
@@ -42,9 +38,9 @@ this["JST"]["track"] = Handlebars.template({"1":function(depth0,helpers,partials
     + alias3(((helper = (helper = helpers.genre || (depth0 != null ? depth0.genre : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"genre","hash":{},"data":data}) : helper)))
     + "</td>\n</td>\n<td class=\"duration\">\n  <span>"
     + alias3(((helper = (helper = helpers.duration || (depth0 != null ? depth0.duration : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"duration","hash":{},"data":data}) : helper)))
-    + "</span>\n</td>\n<td class=\"favorite\">\n"
-    + ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.id : depth0),{"name":"if","hash":{},"fn":this.program(5, data, 0),"inverse":this.program(7, data, 0),"data":data})) != null ? stack1 : "")
-    + "</td>";
+    + "</span>\n</td>\n<td class=\"favorite\">\n  <a href=\"#\" data-track-id=\""
+    + alias3(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\" class=\"fa fa-heart-o\">\n  </a>\n</td>";
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["track_collection"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {

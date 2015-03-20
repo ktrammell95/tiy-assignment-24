@@ -131,16 +131,34 @@ header .navigation .nav-btn3 a {
   float: left;
   background-color: #f322b4;
 }
+.main .lower .lower-left h2 {
+  font-size: 24px;
+}
+.main .lower .lower-left .favorites {
+  list-style: none;
+}
+.main .lower .lower-left .favorites li a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
 .main .lower .lower-right {
   width: 760px;
   height: 100%;
   float: left;
   background-color: #f2ec22;
 }
-.main .lower .lower-right .image {
+.main .lower .lower-right .fav-view {
+  clear: both;
+}
+.main .lower .lower-right .fav-view .song {
+  width: 150px;
+  height: 185px;
+}
+.main .lower .lower-right .fav-view .song .image {
   width: 100px;
   height: 100px;
-  margin: 30px;
+  margin: 20px;
   background-color: grey;
   border-radius: 3px;
   padding: 5px;

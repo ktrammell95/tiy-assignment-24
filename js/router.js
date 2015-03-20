@@ -1,3 +1,14 @@
+// Web applications often provide linkable, bookmarkable,
+// shareable URLs for important locations in the app. 
+// Until recently, hash fragments (#page) were used to provide these permalinks, 
+// but with the arrival of the History API, 
+// it's now possible to use standard URLs (/page). 
+// Backbone.Router provides methods for routing client-side pages, 
+// and connecting them to actions and events. 
+// For browsers which don't yet support the History API, 
+// the Router handles graceful fallback and transparent 
+// translation to the fragment version of the URL.
+
 var Router = Backbone.Router.extend({
 
   routes: {
@@ -10,17 +21,23 @@ var Router = Backbone.Router.extend({
   initialize: function() {
     this.genreView = new GenreView();
     this.navView = new NavView();
-    this.favView = new FavoritesView();
 
-    this.favorites = new FavoriteCollection();
+    this.favListView = new FavListView();
+    this.favView = new FavView();
+
+    // this.favorites = new FavFireCollection();
+
     this.tracks = new TrackCollection();
     this.tracksView = new TrackCollectionView({
       collection: this.tracks
     });
 
+    $(".navigation").append(this.navView.el);
     $(".upper-right").append(this.tracksView.el);
     $(".upper-left").append(this.genreView.el);
-    $(".navigation").append(this.navView.el);
+    $(".upper-right").append(this.tracksView.el);
+    $(".lower-left").append(this.favListView.el);
+    $(".lower-right").append(this.favView.el);
 
   this.listenTo(this.genreView, "link:click", function(genre){
       this.loadGenre(genre);
@@ -40,16 +57,5 @@ var Router = Backbone.Router.extend({
       this.$main.html(this.genreView.el);
   },
 
-  loadFavorites: function(id) {
-    this.favorites.loadFavorites(id);
-  },
-
-  showGenre: function() {
-    // console.log("show Products");
-   if (!this.favView) {
-      this.favView = new FavoritesView().render();
-    }
-      this.$main.html(this.favView.el);
-  },
 
 });
