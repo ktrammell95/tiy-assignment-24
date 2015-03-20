@@ -23,59 +23,58 @@ var TrackView = Backbone.View.extend({
   },
 
   playClass         : "fa-play-circle",
-  loadingClass      : "fa-spinner",
+  // loadingClass      : "fa-spinner",
   pauseClass        : "fa-pause",
-  spinClass         : "fa-spin",
+  // spinClass         : "fa-spin",
   addFavorite       : "fa-heart-o",
   currentFavorite   : "fa-heart",
 
   initialize: function() {
 
-    this.listenTo(this.model, "stream:loading", this.loading);
+    // this.listenTo(this.model, "stream:loading", this.loading);
     this.listenTo(this.model, "stream:play",    this.playing);
-    this.listenTo(this.model, "stream:pause",   this.paused);
     this.listenTo(this.model, "stream:pause",   this.paused);
   },
 
   removeClasses: function() {
     $i = this.$(".play i");
     $a = this.$(".favorite a");
-    $i.removeClass(this.playClass);
-    $i.removeClass(this.loadingClass);
-    $i.removeClass(this.pauseClass);
-    $i.removeClass(this.spinClass);
-    $a.removeClass(this.addFavorite);
-    $a.removeClass(this.currentFavorite);
+    // $i.removeClass(this.playClass);
+    // // $i.removeClass(this.loadingClass);
+    // $i.removeClass(this.pauseClass);
+    // // $i.removeClass(this.spinClass);
+    // $a.removeClass(this.addFavorite);
+    // $a.removeClass(this.currentFavorite);
   },
 
-  loading: function() {
-    this.removeClasses();
-    this.$(".play i").addClass(this.spinClass).addClass(this.loadingClass);
-  },
+  // loading: function() {
+  //   this.removeClasses();
+  //   this.$(".play i").addClass(this.spinClass).addClass(this.loadingClass);
+  // },
 
   playing: function() {
-    this.removeClasses();
+    this.$(".play i").removeClass(this.playClass);
     this.interval = setInterval(this.updatePosition.bind(this), 1000);
     this.$(".play i").addClass(this.pauseClass);
   },
 
   paused: function() {
-    this.removeClasses();
+    this.$(".play i").removeClass(this.pauseClass);
     this.$(".play i").addClass(this.playClass);
   },
 
   favorite: function() {
-    this.removeClasses();
+    this.$(".favorite a").removeClass(this.addFavorite);
     this.$(".favorite a").addClass(this.currentFavorite);
   },
 
-  removefavorite: function() {
-    this.removeClasses();
-    this.$(".favorite a").addClass(this.addFavorite);
-  },
+  // removefavorite: function() {
+  //   this.$(".favorite a").removeClass(this.currentFavorite);
+  //   this.$(".favorite a").addClass(this.addFavorite);
+  // },
 
   finished: function() {
-    this.removeClasses();
+    this.$(".play i").removeClasses();
     this.$(".play i").addClass(this.playClass);
   },
 
@@ -112,11 +111,11 @@ var TrackView = Backbone.View.extend({
     // $btn.data('track-id');
     console.log(e.currentTarget)
     if( $btn.hasClass(this.addFavorite) ) {
-      this.removeClasses(this.addFavorite);
+      this.$(".favorite a").removeClass(this.addFavorite);
       this.$(".favorite a").addClass(this.currentFavorite); //should change heart to solid heart
     }
     else if ( $btn.hasClass(this.currentFavorite) ) {
-      this.removeClasses(this.currentFavorite);
+      this.$(".favorite a").removeClass(this.currentFavorite);
       this.$(".favorite a").addClass(this.addFavorite);//if already favorite click should remove solid heart
     }
   },
