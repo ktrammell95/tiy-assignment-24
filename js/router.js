@@ -14,7 +14,7 @@ var Router = Backbone.Router.extend({
   routes: {
     ""              : "showHome",
     "home"          : "showHome",
-    "genre"         : "showGenre",
+    "songs"         : "loadSongs",
     "search"        : "showSearch",
     "genre/:genre"  : "loadGenre",
   },
@@ -30,6 +30,10 @@ var Router = Backbone.Router.extend({
       collection: this.tracks
     });
 
+    this.songView = new SongView({
+      collection: this.songs
+    });
+
     //create new favorite list and favorite songs to play
     this.favListView = new FavListView({
       collection: this.favorites,
@@ -41,18 +45,39 @@ var Router = Backbone.Router.extend({
       el: ".fav-view"
     });
 
-
     $(".navigation").append(this.navView.el);
-    $(".upper-right").append(this.tracksView.el);
+    $(".upper-right").prepend(this.tracksView.el);
+    $(".upper-right").prepend(this.songView.el);
     $(".upper-left").append(this.genreView.el);
     $(".search-bar").append(this.searchView.el);
     $(".lower-left").append(this.favListView.el);
     $(".lower-right").append(this.favView.el);
 
+  // -- navigation -- //
+  this.listenTo(this.navView, "link:click", function(link){
+    this.navigate(link);
+    if (link === "home"){
+      console.log("this should load Home");
+      // this.showHome();
+    } else {
+      // console.log("loading Genres");
+      this.loadGenre();
+    }
+  });
+
   this.listenTo(this.genreView, "link:click", function(genre){
       this.loadGenre(genre);
       this.navigate("tracks/" + genre);
     });
+
+   // this.listenTo(this.songsView, "link:click", function(title){
+   //    this.loadSongs(title);
+   //    this.navigate("tracks/" + title);
+   //  });
+  },
+
+  loadSongs: function(title) {
+    this.tracks.loadSongs(title);
   },
 
   loadGenre: function(genre) {

@@ -12,11 +12,15 @@ this["JST"]["genre"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"ma
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["nav"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<div>\n  <a class=\"nav-home btn-glass\" data-name=\"home\" href=\"/genres\"><i class=\"fa fa-fw fa-lg fa-home \"></i>Home</a>\n</div>\n<div>\n  <a class=\"nav-genres btn-glass\"data-name=\"genres\" href=\"/genres\"><i class=\"fa fa-fw fa-lg fa-headphones \"></i>Genres</a>\n</div>\n\n\n";
+    return "<div>\n  <a class=\"nav-home btn-glass\" data-name=\"home\" href=\"/genres\"><i class=\"fa fa-fw fa-lg fa-home \"></i>Home</a>\n</div>\n<div>\n  <a class=\"nav-genres btn-glass\"data-name=\"genres\" href=\"/genres\"><i class=\"fa fa-fw fa-lg fa-headphones \"></i>Songs</a>\n</div>\n\n\n";
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["search"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     return "<div>\n  <h3>Can't find what you want? Try searching...</h3>\n</div>\n<div class=\"search\">\n  <form class=\"search-form\" action=\"\" method=\"\">\n    <span></span>\n    <input type = \"text\" class=\"search-field\" name=\"search\" placeholder=\"Enter Search Words\">\n    <input type = \"submit\" class = \"search-button\" name=\"submit\"value=\"Search\">\n  </form>\n</div>";
+},"useData":true});
+this["JST"] = this["JST"] || {};
+this["JST"]["songs"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+    return "<div class=\"song\">\n    <img class=\"image\" src=\"http://lorempixel.com/output/nightlife-q-c-600-600-5.jpg\" alt=\"title\">\n    <div class=\"play-btn\">\n        <i class=\"fa fa-play-circle\"></i>\n    </div>\n    <div class=\"title\">\n      <span>title 1</span>\n    </div>\n  </div><!--song-->";
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["track"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {
