@@ -16,7 +16,7 @@ this["JST"]["nav"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["search"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<div class=\"search\">\n  <form class=\"search-form\" action=\"\" method=\"\">\n    <span></span>\n    <input type = \"text\" class=\"search-field\" name=\"search\" placeholder=\"Enter Search Words\">\n    <input type = \"submit\" class = \"search-button\" name=\"submit\"value=\"Search\">\n  </form>\n</div>";
+    return "<div>\n  <h3>Can't find what you want? Try searching...</h3>\n</div>\n<div class=\"search\">\n  <form class=\"search-form\" action=\"\" method=\"\">\n    <span></span>\n    <input type = \"text\" class=\"search-field\" name=\"search\" placeholder=\"Enter Search Words\">\n    <input type = \"submit\" class = \"search-button\" name=\"submit\"value=\"Search\">\n  </form>\n</div>";
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["track"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {

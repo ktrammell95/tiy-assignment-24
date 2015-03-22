@@ -12,16 +12,25 @@
 var Router = Backbone.Router.extend({
 
   routes: {
-    "" : "showHome",
-    "genre" : "showGenre",
-    // "search"     : "showSearch",
-    "genre/:genre" : "loadGenre",
+    ""              : "showHome",
+    "home"          : "showHome",
+    "genre"         : "showGenre",
+    "search"        : "showSearch",
+    "genre/:genre"  : "loadGenre",
   },
 
   initialize: function() {
-    this.genreView = new GenreView();
-    this.navView = new NavView();
+    this.navView = new NavView();//create new navigation
+    this.genreView = new GenreView(); //create new genre
+    this.searchView = new SearchView();//create new search
 
+    //create new track list and tracks to play
+    this.tracks = new TrackCollection();
+    this.tracksView = new TrackCollectionView({
+      collection: this.tracks
+    });
+
+    //create new favorite list and favorite songs to play
     this.favListView = new FavListView({
       collection: this.favorites,
       el: ".lower-left"
@@ -32,17 +41,11 @@ var Router = Backbone.Router.extend({
       el: ".fav-view"
     });
 
-    // this.favorites = new FavFireCollection();
-
-    this.tracks = new TrackCollection();
-    this.tracksView = new TrackCollectionView({
-      collection: this.tracks
-    });
 
     $(".navigation").append(this.navView.el);
     $(".upper-right").append(this.tracksView.el);
     $(".upper-left").append(this.genreView.el);
-    $(".upper-right").append(this.tracksView.el);
+    $(".search-bar").append(this.searchView.el);
     $(".lower-left").append(this.favListView.el);
     $(".lower-right").append(this.favView.el);
 

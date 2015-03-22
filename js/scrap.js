@@ -78,3 +78,14 @@ var FavoriteCollection = Backbone.Firebase.Collection.extend({
   
 
 // });
+
+
+var SearchView = Backbone.View.extend({
+
+  template: JST["search"],
+
+  render: function(){
+    this.$el.html( this.template());
+    return this;
+  }
+});

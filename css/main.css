@@ -21,37 +21,37 @@ header .nav-light {
 }
 header .nav-light .btn-glass,
 header .nav-light .nav-home {
-  color: #27b4db;
-  background-color: rgba(39, 180, 219, 0);
+  color: #2bcad0;
+  background-color: rgba(43, 202, 208, 0);
 }
 header .nav-light .btn-glass:hover,
 header .nav-light .nav-home:hover {
   color: rgba(255, 255, 255, 0.7);
-  border-color: #1a7f9c;
-  background-color: #27b4db;
+  border-color: #1e8c91;
+  background-color: #2bcad0;
 }
 header .nav-light .btn-glass:active,
 header .nav-light .nav-home:active {
   position: relative;
   z-index: 1;
-  box-shadow: 0 0 1em 0.5ex rgba(39, 180, 219, 0.5);
+  box-shadow: 0 0 1em 0.5ex rgba(43, 202, 208, 0.5);
 }
 header .nav-light .btn-glass,
 header .nav-light .nav-genres {
-  color: #27b4db;
-  background-color: rgba(39, 180, 219, 0);
+  color: #2bcad0;
+  background-color: rgba(43, 202, 208, 0);
 }
 header .nav-light .btn-glass:hover,
 header .nav-light .nav-genres:hover {
   color: rgba(255, 255, 255, 0.7);
-  border-color: #1a7f9c;
-  background-color: #27b4db;
+  border-color: #1e8c91;
+  background-color: #2bcad0;
 }
 header .nav-light .btn-glass:active,
 header .nav-light .nav-genres:active {
   position: relative;
   z-index: 1;
-  box-shadow: 0 0 1em 0.5ex rgba(39, 180, 219, 0.5);
+  box-shadow: 0 0 1em 0.5ex rgba(43, 202, 208, 0.5);
 }
 header .nav-light .nav-home {
   margin-left: 130px;
@@ -132,7 +132,8 @@ header .nav-light .btn-glass:active {
 .main .upper .upper-right .track-list th {
   font-size: 15px;
   line-height: 30px;
-  background-color: #27b4db;
+  padding-right: 12px;
+  background-color: #2bcad0;
 }
 .main .upper .upper-right .track-list .artwork img {
   width: 50px;
@@ -143,7 +144,7 @@ header .nav-light .btn-glass:active {
   background: #949899;
 }
 .main .upper .upper-right .track-list td span {
-  padding: 0 10px;
+  padding: 0 20px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -152,12 +153,12 @@ header .nav-light .btn-glass:active {
 }
 .main .upper .upper-right .track-list td i {
   font-size: 28px;
-  color: #c1db28;
+  color: #2bcad0;
   margin-left: 15px;
   vertical-align: -5px;
 }
 .main .upper .upper-right .track-list td i:hover {
-  color: #27b4db;
+  color: #c1db28;
   cursor: pointer;
 }
 .main .upper .upper-right .track-list td a {
@@ -165,24 +166,24 @@ header .nav-light .btn-glass:active {
   padding-left: 15px;
   color: #c1db28;
 }
-.main .middle {
+.main .search-bar {
   clear: both;
   width: 100%;
   height: 50px;
   text-align: center;
   line-height: 50px;
-  background-color: #27b4db;
+  background-color: #2bcad0;
 }
-.main .middle div {
+.main .search-bar div {
   height: 100%;
   float: left;
   text-align: center;
   line-height: 50px;
 }
-.main .middle div h3 {
+.main .search-bar div h3 {
   color: white;
 }
-.main .middle .search {
+.main .search-bar .search {
   float: right;
   width: 300px;
   height: 100%;

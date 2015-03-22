@@ -31,7 +31,8 @@
 @body-clr: #808080;
 @main-clr: #949899;
 @hdr-clr: #c1db28;
-@accent-clr: #27b4db;
+@accent-clr: #2BCAD0;
+@icon-clr: #db57b6;
 
 body {
   background-color: @body-clr;
@@ -164,6 +165,7 @@ header {
         th {
           font-size: 15px;
           line-height: 30px;
+          padding-right: 12px;
           background-color: @accent-clr;
         }
         .artwork img{
@@ -176,7 +178,7 @@ header {
           background: @main-clr;
         }
         td span {
-          padding: 0 10px;
+          padding: 0 20px;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -185,11 +187,11 @@ header {
         }
         td i {
           font-size: 28px;
-          color: @hdr-clr;
+          color: @accent-clr;
           margin-left: 15px;
           vertical-align: -5px;
           &:hover {
-            color: @accent-clr;
+            color: @hdr-clr;
             cursor: pointer;
           }
         }
@@ -201,7 +203,7 @@ header {
       }
     }
   }
-  .middle {
+  .search-bar {
     clear: both;
     width: 100%;
     height: 50px;

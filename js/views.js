@@ -172,12 +172,9 @@ var NavView = Backbone.View.extend({
 
   onLinkClick: function(e) {
     e.preventDefault();
-    var name = $(e.currentTarget).data("name");
-    var href = $(e.currentTarget).attr("href");
-    this.trigger("link:click", {
-      name: name,
-      href: href
-    });
+    var link = $(e.currentTarget).data("name");
+    this.trigger("link:click", link);
+    console.log("you clicked a link");
   }
 
 });
@@ -247,9 +244,9 @@ var FavListView = Backbone.View.extend({
 
 var FavView = Backbone.View.extend({
 
-  // events: {
-  //   "click a" :"onLinkClick"
-  // },
+  events: {
+    "click a" :"onLinkClick"
+  },
 
   className: "fav-view",
 
@@ -264,11 +261,29 @@ var FavView = Backbone.View.extend({
     return this;
   },
 
-  // onLinkClick: function(e) {
-  //   e.preventDefault();
-  //   var id = $(e.currentTarget).data("trackid");
-  //   this.trigger("link:click", id);
-  // }
+  onLinkClick: function(e) {
+    e.preventDefault();
+    var id = $(e.currentTarget).data("trackid");
+    this.trigger("link:click", id);
+  }
 
 });
 
+// ======================  SEARCH ====================== //
+
+
+var SearchView = Backbone.View.extend({
+
+  className: "search-bar",
+
+  template: JST["search"],
+
+  initialize: function() {
+    this.render();
+  },
+
+  render: function(){
+    this.$el.html( this.template());
+    return this;
+  }
+});
