@@ -22,8 +22,15 @@ var Router = Backbone.Router.extend({
     this.genreView = new GenreView();
     this.navView = new NavView();
 
-    this.favListView = new FavListView();
-    this.favView = new FavView();
+    this.favListView = new FavListView({
+      collection: this.favorites,
+      el: ".lower-left"
+    });
+
+    this.favView = new FavView({
+      collection: this.favorites,
+      el: ".fav-view"
+    });
 
     // this.favorites = new FavFireCollection();
 

@@ -62,14 +62,10 @@ var TrackCollection = Backbone.Collection.extend({
 
 // ======================  FIREBASE ====================== //
 
-// var Fire = Backbone.Model.extend({
+var FavoriteCollection = Backbone.Firebase.Collection.extend({
 
-// });
+  model: Track,
+  url: "https://kt-musicapp.firebaseio.com/favorites",
 
-// var FavFireCollection = Backbone.Firebase.Collection.extend({
-
-//   url: "https://kt-musicapp.firebaseio.com/favorites/artists",
-//   model: Fire
-
-// });
+});;
 

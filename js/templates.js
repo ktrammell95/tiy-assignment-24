@@ -12,7 +12,7 @@ this["JST"]["genre"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"ma
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["nav"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<div class=\"nav-btn1\">\n  <a data-name=\"home\" href=\"/genres\">Home</a>\n</div>\n<div class=\"nav-btn2\">\n  <a data-name=\"genres\" href=\"/genres\">Genres</a>\n</div>\n<div class=\"nav-btn2\">\n  <a data-name=\"crap\" href=\"/search\">Crap for now</a>\n</div>\n\n\n";
+    return "<div>\n  <a class=\"nav-home btn-glass\" data-name=\"home\" href=\"/genres\"><i class=\"fa fa-fw fa-lg fa-home \"></i>Home</a>\n</div>\n<div>\n  <a class=\"nav-genres btn-glass\"data-name=\"genres\" href=\"/genres\"><i class=\"fa fa-fw fa-lg fa-headphones \"></i>Genres</a>\n</div>\n\n\n";
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["search"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
@@ -26,7 +26,9 @@ this["JST"]["track"] = Handlebars.template({"1":function(depth0,helpers,partials
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var stack1, helper, alias1=helpers.helperMissing, alias2="function", alias3=this.escapeExpression;
 
-  return "\n<td class=\"artwork\">\n  <img src=\""
+  return "\n<td class=\"favorite\">\n  <a href=\"#\" data-track-id=\""
+    + alias3(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\" class=\"fa fa-heart-o\">\n  </a>\n</td>\n<td class=\"artwork\">\n  <img src=\""
     + alias3(((helper = (helper = helpers.artwork_url || (depth0 != null ? depth0.artwork_url : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"artwork_url","hash":{},"data":data}) : helper)))
     + "\" alt=\""
     + alias3(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"title","hash":{},"data":data}) : helper)))
@@ -38,11 +40,9 @@ this["JST"]["track"] = Handlebars.template({"1":function(depth0,helpers,partials
     + alias3(((helper = (helper = helpers.genre || (depth0 != null ? depth0.genre : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"genre","hash":{},"data":data}) : helper)))
     + "</td>\n</td>\n<td class=\"duration\">\n  <span>"
     + alias3(((helper = (helper = helpers.duration || (depth0 != null ? depth0.duration : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"duration","hash":{},"data":data}) : helper)))
-    + "</span>\n</td>\n<td class=\"favorite\">\n  <a href=\"#\" data-track-id=\""
-    + alias3(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\" class=\"fa fa-heart-o\">\n  </a>\n</td>";
+    + "</span>\n</td>";
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["track_collection"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<thead>\n  <tr>\n    <th>Artwork</th>\n    <th></th>\n    <th>Title</th>\n    <th>Genre</th>\n    <th>Duration</th>\n    <th>Favorite</th>\n  </tr>\n</thead>\n<tbody>\n\n</tbody>";
+    return "<thead>\n  <tr>\n    <th>Favorite</th>\n    <th>Artwork</th>\n    <th></th>\n    <th>Title</th>\n    <th>Genre</th>\n    <th>Duration</th>\n  </tr>\n</thead>\n<tbody>\n\n</tbody>";
 },"useData":true});

@@ -1,4 +1,4 @@
 $(function(){
-  window.router = new Router();
+  window.app = new Router();
   Backbone.history.start();
 });

@@ -23,15 +23,12 @@ var TrackView = Backbone.View.extend({
   },
 
   playClass         : "fa-play-circle",
-  // loadingClass      : "fa-spinner",
   pauseClass        : "fa-pause",
-  // spinClass         : "fa-spin",
   addFavorite       : "fa-heart-o",
   currentFavorite   : "fa-heart",
 
   initialize: function() {
 
-    // this.listenTo(this.model, "stream:loading", this.loading);
     this.listenTo(this.model, "stream:play",    this.playing);
     this.listenTo(this.model, "stream:pause",   this.paused);
   },
@@ -39,18 +36,7 @@ var TrackView = Backbone.View.extend({
   removeClasses: function() {
     $i = this.$(".play i");
     $a = this.$(".favorite a");
-    // $i.removeClass(this.playClass);
-    // // $i.removeClass(this.loadingClass);
-    // $i.removeClass(this.pauseClass);
-    // // $i.removeClass(this.spinClass);
-    // $a.removeClass(this.addFavorite);
-    // $a.removeClass(this.currentFavorite);
   },
-
-  // loading: function() {
-  //   this.removeClasses();
-  //   this.$(".play i").addClass(this.spinClass).addClass(this.loadingClass);
-  // },
 
   playing: function() {
     this.$(".play i").removeClass(this.playClass);
@@ -67,11 +53,6 @@ var TrackView = Backbone.View.extend({
     this.$(".favorite a").removeClass(this.addFavorite);
     this.$(".favorite a").addClass(this.currentFavorite);
   },
-
-  // removefavorite: function() {
-  //   this.$(".favorite a").removeClass(this.currentFavorite);
-  //   this.$(".favorite a").addClass(this.addFavorite);
-  // },
 
   finished: function() {
     this.$(".play i").removeClasses();
@@ -119,18 +100,6 @@ var TrackView = Backbone.View.extend({
       this.$(".favorite a").addClass(this.addFavorite);//if already favorite click should remove solid heart
     }
   },
-
-  // favorite: function() {
-  //   this.removeClasses();
-  //   this.$(".favorite a").addClass(this.currentFavorite);
-  // },
-
-  // removefavorite: function() {
-  //   this.removeClasses();
-  //   this.$(".favorite a").addClass(this.addFavorite);
-  // },
-
-
 
   formatDuration: function(duration) {
       duration = duration / 1000 / 60;
@@ -268,8 +237,8 @@ var FavListView = Backbone.View.extend({
 
   // onLinkClick: function(e) {
   //   e.preventDefault();
-  //   var genre = $(e.currentTarget).data("genre");
-  //   this.trigger("link:click", genre);
+  //   var fav-track = $(e.currentTarget).data("track-id");
+  //   this.trigger("link:click", track-id);
   // }
 
 });
@@ -297,8 +266,8 @@ var FavView = Backbone.View.extend({
 
   // onLinkClick: function(e) {
   //   e.preventDefault();
-  //   var genre = $(e.currentTarget).data("genre");
-  //   this.trigger("link:click", genre);
+  //   var id = $(e.currentTarget).data("trackid");
+  //   this.trigger("link:click", id);
   // }
 
 });

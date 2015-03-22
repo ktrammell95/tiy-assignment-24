@@ -1,24 +1,65 @@
+@clr-home: @accent-clr;
+@clr-genres: @accent-clr;
+
+@b: 7.5%;
+@gloss:
+  repeating-linear-gradient(-45deg, 
+      fade(white, 0%) 8%,
+      fade(white, @b) 10%,
+      
+      fade(white, @b) 14%,
+      fade(white, @b*2) 14%,
+      fade(white, @b*2) 15%,
+      fade(white, @b) 17%,
+      fade(white, 0%) 30%,
+
+      fade(white, 0%) 36%,
+      fade(white, @b) 40%,
+      fade(white, @b*2) 42%,
+      fade(white, 0%) 43%,
+    
+    
+      fade(white, 0%) 55%,
+      fade(white, @b) 60%,
+      
+      fade(white, @b) 66%,
+      fade(white, @b*2) 66%,
+      fade(white, @b) 70%,
+      fade(white, 0%) 75%,
+      fade(white, 0%) 100%);
+
+@body-clr: #808080;
+@main-clr: #949899;
+@hdr-clr: #c1db28;
+@accent-clr: #27b4db;
+
 body {
-  background-color: #949899;
+  background-color: @body-clr;
 }
 
 header {
   width: 960px;
   height: 100px;
-  background-color: #c1db28;
+  background-color: @hdr-clr;
   margin: auto;
   .logo {
     float: left;
     width: 200px;
     height: 100%;
-    background-color: grey;
+    img {
+      width: 200px;
+      height: 100%;
+    }
   } 
-  .navigation{
-    
-    .nav-btn1{
+  .nav-light {
+    background-color: white;
+      .btn-glass, .nav-home { .colorize-l(@clr-home); }
+      .btn-glass, .nav-genres { .colorize-l(@clr-genres); }
+  
+    .nav-home{
       margin-left: 130px;
     }   
-    .nav-btn1, .nav-btn2, .nav-btn3{
+    .nav-home, .nav-genres,{
       float: left;
       width: 200px;
       height: 100%;
@@ -29,8 +70,60 @@ header {
       color: white;
       font-size: 20px;
       }
-    } 
+    }
+    .colorize-l(@base) {
+      color: mix(@base, white, 100%);
+      background-color: fade(@base, 0%);
+      &:hover {
+        color: fade(white, 70%);
+        border-color: darken(@base,15%);
+        background-color: @base;
+      }
+      &:active {
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 0 1em 0.5ex fade(@base, 50%);
+      }
+    }
+
+    .btn-glass {
+      // flex-grow: 1;
+      text-align: center;
+      display: inline-block;
+      color: fade(white, 70%);
+      text-decoration: none;
+      // padding: 1em 2em;
+      // font-family: Lato;
+      font-weight: 300;
+      // border: 1px dotted transparent;
+      letter-spacing: 0.98pt;
+      text-transform: uppercase;
+      //text-shadow: 0 0 5px black;
+      
+      transition: background-position 2s cubic-bezier(0,1,0,1),
+        border-color 500ms,
+        background-color 500ms;
+      
+      &:hover {
+        background-position: -100vw 0, 0 0;
+      }
+      
+      &:active {
+        background-position: -75vw 0, 0 0;
+        border-style: solid;
+      }
+      
+      position: relative;
+      
+      background-attachment: fixed, scroll;
+      background-size: 100vw 100vh, cover;
+      background-position: center center, 0 0;
+      background-image: @gloss,
+        radial-gradient(ellipse farthest-corner, transparent, fade(black,0%) 110%);
+    }
   } 
+  
+
 }//header
 
 .main {
@@ -40,12 +133,13 @@ header {
   margin-top: 10px;
   .upper {
     width: 100%;
-    height: 500px;
+    height: 600px;
+    background-color: @main-clr;
     .upper-left{
       float:left;
-      width: 200px;
+      width: 150px;
       height: 600px;
-      background-color: #27b4db;
+      // background-color: #27b4db;
       h2{
         font-size: 24px;
       }
@@ -59,27 +153,27 @@ header {
       }
     }
     .upper-right {
-      width: 720px;
+      width: 770px;
       height: 600px;
-      overflow: hidden;
+      overflow: auto;
       float: left;
       padding-left: 40px;
-      background-color: #da56f4;
+      // background-color: #da56f4;
       .track-list {
         border-collapse: collapse;
         th {
-          font-size: 20px;
+          font-size: 15px;
           line-height: 30px;
-          background-color: grey;
+          background-color: @accent-clr;
         }
         .artwork img{
           width: 50px;
           height: 50px;
-          font-size: 10px;
+          // font-size: 15px;
           color: #999;
         }
         tbody tr {
-          background: #f0f0f0;
+          background: @main-clr;
         }
         td span {
           padding: 0 10px;
@@ -91,13 +185,18 @@ header {
         }
         td i {
           font-size: 28px;
-          color: #45789a;
+          color: @hdr-clr;
           margin-left: 15px;
           vertical-align: -5px;
           &:hover {
-            color: #459a68;
+            color: @accent-clr;
             cursor: pointer;
           }
+        }
+        td a {
+          text-decoration: none;
+          padding-left: 15px;
+          color: @hdr-clr;
         }
       }
     }
@@ -108,7 +207,7 @@ header {
     height: 50px;
     text-align: center;
     line-height: 50px;
-    background-color: #666a6b;
+    background-color: @accent-clr;
     div {
       height: 100%;
       float: left;
@@ -122,7 +221,7 @@ header {
       float: right;
       width: 300px;
       height: 100%;
-      background-color: grey;
+      // background-color: @accent-clr;
     }
   }
   .lower {
@@ -130,7 +229,7 @@ header {
       width: 200px;
       height: 100%;
       float: left;
-      background-color: #f322b4;
+      background-color: @main-clr;
       h2{
         font-size: 24px;
       }
@@ -147,7 +246,7 @@ header {
       width: 760px;
       height: 100%;
       float: left;
-      background-color: #f2ec22;
+      background-color: @main-clr;
       .fav-view {
         clear: both;
         .song {
@@ -157,7 +256,7 @@ header {
             width: 100px;
             height: 100px;
             margin: 20px;
-            background-color: grey;
+            // background-color: grey;
             border-radius: 3px;
             padding: 5px;
             float: left;
@@ -167,11 +266,3 @@ header {
     }
   }
 }//main 
-
-footer {
-  clear: both;
-  width: 960px;
-  height: 100px;
-  margin: auto;
-  background-color: #666a6b;
-}

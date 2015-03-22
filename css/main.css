@@ -1,5 +1,5 @@
 body {
-  background-color: #949899;
+  background-color: #808080;
 }
 header {
   width: 960px;
@@ -11,26 +11,86 @@ header .logo {
   float: left;
   width: 200px;
   height: 100%;
-  background-color: grey;
 }
-header .navigation .nav-btn1 {
+header .logo img {
+  width: 200px;
+  height: 100%;
+}
+header .nav-light {
+  background-color: white;
+}
+header .nav-light .btn-glass,
+header .nav-light .nav-home {
+  color: #27b4db;
+  background-color: rgba(39, 180, 219, 0);
+}
+header .nav-light .btn-glass:hover,
+header .nav-light .nav-home:hover {
+  color: rgba(255, 255, 255, 0.7);
+  border-color: #1a7f9c;
+  background-color: #27b4db;
+}
+header .nav-light .btn-glass:active,
+header .nav-light .nav-home:active {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 1em 0.5ex rgba(39, 180, 219, 0.5);
+}
+header .nav-light .btn-glass,
+header .nav-light .nav-genres {
+  color: #27b4db;
+  background-color: rgba(39, 180, 219, 0);
+}
+header .nav-light .btn-glass:hover,
+header .nav-light .nav-genres:hover {
+  color: rgba(255, 255, 255, 0.7);
+  border-color: #1a7f9c;
+  background-color: #27b4db;
+}
+header .nav-light .btn-glass:active,
+header .nav-light .nav-genres:active {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 1em 0.5ex rgba(39, 180, 219, 0.5);
+}
+header .nav-light .nav-home {
   margin-left: 130px;
 }
-header .navigation .nav-btn1,
-header .navigation .nav-btn2,
-header .navigation .nav-btn3 {
+header .nav-light .nav-home,
+header .nav-light .nav-genres {
   float: left;
   width: 200px;
   height: 100%;
   line-height: 100px;
   vertical-align: bottom;
 }
-header .navigation .nav-btn1 a,
-header .navigation .nav-btn2 a,
-header .navigation .nav-btn3 a {
+header .nav-light .nav-home a,
+header .nav-light .nav-genres a {
   text-decoration: none;
   color: white;
   font-size: 20px;
+}
+header .nav-light .btn-glass {
+  text-align: center;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-weight: 300;
+  letter-spacing: 0.98pt;
+  text-transform: uppercase;
+  transition: background-position 2s cubic-bezier(0, 1, 0, 1), border-color 500ms, background-color 500ms;
+  position: relative;
+  background-attachment: fixed, scroll;
+  background-size: 100vw 100vh, cover;
+  background-position: center center, 0 0;
+  background-image: repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0) 8%, rgba(255, 255, 255, 0.075) 10%, rgba(255, 255, 255, 0.075) 14%, rgba(255, 255, 255, 0.15) 14%, rgba(255, 255, 255, 0.15) 15%, rgba(255, 255, 255, 0.075) 17%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 36%, rgba(255, 255, 255, 0.075) 40%, rgba(255, 255, 255, 0.15) 42%, rgba(255, 255, 255, 0) 43%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.075) 60%, rgba(255, 255, 255, 0.075) 66%, rgba(255, 255, 255, 0.15) 66%, rgba(255, 255, 255, 0.075) 70%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%), radial-gradient(ellipse farthest-corner, transparent, rgba(0, 0, 0, 0) 110%);
+}
+header .nav-light .btn-glass:hover {
+  background-position: -100vw 0, 0 0;
+}
+header .nav-light .btn-glass:active {
+  background-position: -75vw 0, 0 0;
+  border-style: solid;
 }
 .main {
   width: 960px;
@@ -40,13 +100,13 @@ header .navigation .nav-btn3 a {
 }
 .main .upper {
   width: 100%;
-  height: 500px;
+  height: 600px;
+  background-color: #949899;
 }
 .main .upper .upper-left {
   float: left;
-  width: 200px;
+  width: 150px;
   height: 600px;
-  background-color: #27b4db;
 }
 .main .upper .upper-left h2 {
   font-size: 24px;
@@ -60,29 +120,27 @@ header .navigation .nav-btn3 a {
   text-decoration: none;
 }
 .main .upper .upper-right {
-  width: 720px;
+  width: 770px;
   height: 600px;
-  overflow: hidden;
+  overflow: auto;
   float: left;
   padding-left: 40px;
-  background-color: #da56f4;
 }
 .main .upper .upper-right .track-list {
   border-collapse: collapse;
 }
 .main .upper .upper-right .track-list th {
-  font-size: 20px;
+  font-size: 15px;
   line-height: 30px;
-  background-color: grey;
+  background-color: #27b4db;
 }
 .main .upper .upper-right .track-list .artwork img {
   width: 50px;
   height: 50px;
-  font-size: 10px;
   color: #999;
 }
 .main .upper .upper-right .track-list tbody tr {
-  background: #f0f0f0;
+  background: #949899;
 }
 .main .upper .upper-right .track-list td span {
   padding: 0 10px;
@@ -94,13 +152,18 @@ header .navigation .nav-btn3 a {
 }
 .main .upper .upper-right .track-list td i {
   font-size: 28px;
-  color: #45789a;
+  color: #c1db28;
   margin-left: 15px;
   vertical-align: -5px;
 }
 .main .upper .upper-right .track-list td i:hover {
-  color: #459a68;
+  color: #27b4db;
   cursor: pointer;
+}
+.main .upper .upper-right .track-list td a {
+  text-decoration: none;
+  padding-left: 15px;
+  color: #c1db28;
 }
 .main .middle {
   clear: both;
@@ -108,7 +171,7 @@ header .navigation .nav-btn3 a {
   height: 50px;
   text-align: center;
   line-height: 50px;
-  background-color: #666a6b;
+  background-color: #27b4db;
 }
 .main .middle div {
   height: 100%;
@@ -123,13 +186,12 @@ header .navigation .nav-btn3 a {
   float: right;
   width: 300px;
   height: 100%;
-  background-color: grey;
 }
 .main .lower .lower-left {
   width: 200px;
   height: 100%;
   float: left;
-  background-color: #f322b4;
+  background-color: #949899;
 }
 .main .lower .lower-left h2 {
   font-size: 24px;
@@ -146,7 +208,7 @@ header .navigation .nav-btn3 a {
   width: 760px;
   height: 100%;
   float: left;
-  background-color: #f2ec22;
+  background-color: #949899;
 }
 .main .lower .lower-right .fav-view {
   clear: both;
@@ -159,15 +221,7 @@ header .navigation .nav-btn3 a {
   width: 100px;
   height: 100px;
   margin: 20px;
-  background-color: grey;
   border-radius: 3px;
   padding: 5px;
   float: left;
-}
-footer {
-  clear: both;
-  width: 960px;
-  height: 100px;
-  margin: auto;
-  background-color: #666a6b;
 }
