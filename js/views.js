@@ -13,7 +13,7 @@
 
 var HomeView = Backbone.View.extend({
 
-  className: "upper-right",
+  className: "home",
   
   template: JST["home"],
 

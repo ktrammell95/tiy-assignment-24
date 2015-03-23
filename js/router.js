@@ -15,7 +15,6 @@ var Router = Backbone.Router.extend({
     ""              : "showHome",
     "home"          : "showHome",
     "songs"         : "loadSongs",
-    // "search"        : "showSearch",
     "genre/:genre"  : "loadGenre",
   },
 
@@ -47,9 +46,9 @@ var Router = Backbone.Router.extend({
     });
 
     $(".navigation").append(this.navView.el);
-    $(".upper-right").append(this.tracksView.el);
-    $(".upper-right").append(this.songView.el);
     $(".upper-right").append(this.homeView.el);
+    $(".upper-right").prepend(this.tracksView.el);
+    $(".upper-right").prepend(this.songView.el);
     $(".upper-left").append(this.genreView.el);
     $(".search-bar").append(this.searchView.el);
     $(".lower-left").append(this.favListView.el);
@@ -72,14 +71,6 @@ var Router = Backbone.Router.extend({
       this.navigate("tracks/" + genre);
     });
 
-   // this.listenTo(this.songsView, "link:click", function(title){
-   //    this.loadSongs(title);
-   //    this.navigate("tracks/" + title);
-   //  });
-  },
-
-  loadSongs: function(title) {
-    this.tracks.loadSongs(title);
   },
 
   loadGenre: function(genre) {
@@ -95,12 +86,12 @@ var Router = Backbone.Router.extend({
   },
 
   // showHome: function() {
-    // console.log("show Products");
+  //   // console.log(this);
   //  if (!this.homeView) {
   //     this.homeView = new HomeView().render();
   //   }
   //     this.$main.html(this.homeView.el);
-  // },
+  // }
 
 
 });

@@ -38,10 +38,10 @@ var SongView = Backbone.View.extend({
     this.$(".play i").addClass(this.playClass);
   },
 
-  favorite: function() {
-    this.$(".favorite a").removeClass(this.addFavorite);
-    this.$(".favorite a").addClass(this.currentFavorite);
-  },
+  // favorite: function() {
+  //   this.$(".favorite a").removeClass(this.addFavorite);
+  //   this.$(".favorite a").addClass(this.currentFavorite);
+  // },
 
   finished: function() {
     this.$(".play i").removeClasses();
@@ -69,11 +69,18 @@ var SongView = Backbone.View.extend({
     if( $btn.hasClass(this.addFavorite) ) {
       this.$(".favorite a").removeClass(this.addFavorite);
       this.$(".favorite a").addClass(this.currentFavorite); //should change heart to solid heart
+      // this.$(".favorite a").
+      //this should add song to favorite list in Firebase
     }
     else if ( $btn.hasClass(this.currentFavorite) ) {
       this.$(".favorite a").removeClass(this.currentFavorite);
       this.$(".favorite a").addClass(this.addFavorite);//if already favorite click should remove solid heart
     }
+
+    var id = $btn.data('track-id');
+    this.trigger("add:fav", id);
+
+    console.log(id);
   },
 
   render: function() {

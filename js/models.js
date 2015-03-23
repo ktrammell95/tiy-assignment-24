@@ -30,8 +30,15 @@ var Track = Backbone.Model.extend({
       this.trigger("stream:loaded");
       this.play();
     }.bind(this));
-  }
+  },
 
+  favorite: function() {
+    this.collection.favorites.add({"id": this.get('id'), "title": this.get('title') });
+  },
+
+  unfavorite: function() {
+    this.collection.favorites.remove({id: this.get('id')});
+  }
 });
 
 // Collections are ordered sets of models. 
@@ -45,6 +52,10 @@ var Track = Backbone.Model.extend({
 var TrackCollection = Backbone.Collection.extend({
 
   model: Track,
+
+  initialize: function() {
+    this.favorites = new FavoriteCollection();
+  },
 
   loadGenre: function(genre) {
     SC.get('/tracks', { genres: genre }, function(tracks) {
@@ -67,5 +78,7 @@ var FavoriteCollection = Backbone.Firebase.Collection.extend({
   model: Track,
   url: "https://kt-musicapp.firebaseio.com/favorites",
 
+
+//add track-id to here
 });;
 

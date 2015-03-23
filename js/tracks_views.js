@@ -78,13 +78,13 @@ var TrackView = Backbone.View.extend({
   onFavButtonClick: function(e) {
     e.preventDefault();
     $btn = $(e.currentTarget);
-    // $btn.data('track-id');
-    console.log(e.currentTarget)
     if( $btn.hasClass(this.addFavorite) ) {
+      this.model.favorite();
       this.$(".favorite a").removeClass(this.addFavorite);
       this.$(".favorite a").addClass(this.currentFavorite); //should change heart to solid heart
     }
     else if ( $btn.hasClass(this.currentFavorite) ) {
+      this.model.unfavorite();
       this.$(".favorite a").removeClass(this.currentFavorite);
       this.$(".favorite a").addClass(this.addFavorite);//if already favorite click should remove solid heart
     }
