@@ -9,7 +9,35 @@
 // and now everywhere that model data is displayed in the UI, 
 // it is always immediately up to date.
 
+// ======================  NAVIGATION ====================== //
 
+var HomeView = Backbone.View.extend({
+
+  className: "upper-right",
+  
+  template: JST["home"],
+
+  // events: {
+  //   "click a" : "onLinkClick"
+  // },
+
+  initialize: function() {
+    this.render();
+  },
+
+  render: function() {
+    this.$el.html( this.template() );
+    return this;
+  },
+
+  // onLinkClick: function(e) {
+  //   e.preventDefault();
+  //   var link = $(e.currentTarget).data("name");
+  //   this.trigger("link:click", link);
+    // console.log("you clicked a link");
+  // }
+
+});
 
 // ======================  NAVIGATION ====================== //
 

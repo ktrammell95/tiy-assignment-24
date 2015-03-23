@@ -126,6 +126,11 @@ header .nav-light .btn-glass:active {
   float: left;
   padding-left: 40px;
 }
+.main .upper .upper-right .home-image {
+  width: 500px;
+  height: 300px;
+  margin: 90px;
+}
 .main .upper .upper-right .track-list {
   border-collapse: collapse;
 }

@@ -15,11 +15,12 @@ var Router = Backbone.Router.extend({
     ""              : "showHome",
     "home"          : "showHome",
     "songs"         : "loadSongs",
-    "search"        : "showSearch",
+    // "search"        : "showSearch",
     "genre/:genre"  : "loadGenre",
   },
 
   initialize: function() {
+    this.homeView = new HomeView();
     this.navView = new NavView();//create new navigation
     this.genreView = new GenreView(); //create new genre
     this.searchView = new SearchView();//create new search
@@ -46,8 +47,9 @@ var Router = Backbone.Router.extend({
     });
 
     $(".navigation").append(this.navView.el);
-    $(".upper-right").prepend(this.tracksView.el);
-    $(".upper-right").prepend(this.songView.el);
+    $(".upper-right").append(this.tracksView.el);
+    $(".upper-right").append(this.songView.el);
+    $(".upper-right").append(this.homeView.el);
     $(".upper-left").append(this.genreView.el);
     $(".search-bar").append(this.searchView.el);
     $(".lower-left").append(this.favListView.el);
@@ -91,6 +93,14 @@ var Router = Backbone.Router.extend({
     }
       this.$main.html(this.genreView.el);
   },
+
+  // showHome: function() {
+    // console.log("show Products");
+  //  if (!this.homeView) {
+  //     this.homeView = new HomeView().render();
+  //   }
+  //     this.$main.html(this.homeView.el);
+  // },
 
 
 });

@@ -11,6 +11,10 @@ this["JST"]["genre"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"ma
     return "<h2>Genres</h2>\n\n<li><a data-genre=\"pop\" href=\"#\" alt=\"pop\">Pop</li>\n<li><a data-genre=\"rock\" href=\"#\" alt=\"rock\">Rock</li>\n<li><a data-genre=\"folk\" href=\"#\" alt=\"folk\">Folk</li>\n<li><a data-genre=\"rap\" href=\"#\" alt=\"rap\">Rap</li>\n<li><a data-genre=\"country\" href=\"#\" alt=\"country\">Country</li>\n<li><a data-genre=\"80s\" href=\"#\" alt=\"80's\">80s</li>";
 },"useData":true});
 this["JST"] = this["JST"] || {};
+this["JST"]["home"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+    return "<img class=\"home-image\" src=\"images/soundcloud.png\" alt=\"title\">";
+},"useData":true});
+this["JST"] = this["JST"] || {};
 this["JST"]["nav"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     return "<div>\n  <a class=\"nav-home btn-glass\" data-name=\"home\" href=\"/genres\"><i class=\"fa fa-fw fa-lg fa-home \"></i>Home</a>\n</div>\n<div>\n  <a class=\"nav-genres btn-glass\"data-name=\"genres\" href=\"/genres\"><i class=\"fa fa-fw fa-lg fa-headphones \"></i>Songs</a>\n</div>\n\n\n";
 },"useData":true});
