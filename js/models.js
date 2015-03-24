@@ -33,7 +33,12 @@ var Track = Backbone.Model.extend({
   },
 
   favorite: function() {
-    this.collection.favorites.add({"id": this.get('id'), "title": this.get('title') });
+    this.collection.favorites.add({
+      "id": this.get('id'), 
+      "title": this.get('title'), 
+      "art_work":this.get('artwork_url'),
+      "streamable":this.get('streamable')
+    });
   },
 
   unfavorite: function() {
@@ -45,7 +50,7 @@ var Track = Backbone.Model.extend({
 // You can bind "change" events to be notified 
 // when any model in the collection has been modified, l
 // isten for "add" and "remove"events, fetch the collection 
-//from the server, and use a full suite of Underscore.js methods.
+// from the server, and use a full suite of Underscore.js methods.
 
 // ======================  COLLECTIONS ====================== //
 
@@ -53,12 +58,18 @@ var TrackCollection = Backbone.Collection.extend({
 
   model: Track,
 
-  initialize: function() {
+  initialize: function() {//FavoriteCollection down below
     this.favorites = new FavoriteCollection();
   },
 
   loadGenre: function(genre) {
     SC.get('/tracks', { genres: genre }, function(tracks) {
+      this.reset(tracks);
+    }.bind(this));
+  },
+
+  loadSongs: function(title) {
+    SC.get('/tracks', { title: title }, function(tracks) {
       this.reset(tracks);
     }.bind(this));
   },
@@ -78,7 +89,5 @@ var FavoriteCollection = Backbone.Firebase.Collection.extend({
   model: Track,
   url: "https://kt-musicapp.firebaseio.com/favorites",
 
-
-//add track-id to here
 });;
 

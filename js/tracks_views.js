@@ -1,4 +1,4 @@
-// ======================  TRACKS ====================== //
+// ======================  INDIVIDUAL TRACKS ====================== //
 
 var TrackView = Backbone.View.extend({
 
@@ -112,6 +112,8 @@ var TrackView = Backbone.View.extend({
 
 });
 
+// ======================  LIST OF TRACKS ====================== //
+
 var TrackCollectionView = Backbone.View.extend({
 
   tagName: "table",
@@ -137,3 +139,6 @@ var TrackCollectionView = Backbone.View.extend({
   }
 
 });
+
+
+

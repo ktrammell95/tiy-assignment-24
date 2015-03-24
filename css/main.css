@@ -193,7 +193,7 @@ header .nav-light .btn-glass:active {
   height: 100%;
 }
 .main .lower .lower-left {
-  width: 200px;
+  width: 100%;
   height: 100%;
   float: left;
   background-color: #949899;
@@ -201,10 +201,10 @@ header .nav-light .btn-glass:active {
 .main .lower .lower-left h2 {
   font-size: 24px;
 }
-.main .lower .lower-left .favorites {
+.main .lower .lower-left .favorites-list {
   list-style: none;
 }
-.main .lower .lower-left .favorites li a {
+.main .lower .lower-left .favorites-list .favlist-item a {
   color: white;
   font-size: 20px;
   text-decoration: none;

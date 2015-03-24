@@ -118,3 +118,30 @@ var GenreView = Backbone.View.extend({
   }
 
 });
+
+var SongView = Backbone.View.extend({
+
+  // events: {
+  //   "click a" :"onLinkClick"
+  // },
+
+  className: "songs",
+
+  template: JST["song"],
+
+  initialize: function() {
+    this.render();
+  },
+
+  render: function() {
+    this.$el.html( this.template() );
+    return this;
+  },
+
+  // onLinkClick: function(e) {
+  //   e.preventDefault();
+  //   var song = $(e.currentTarget).data("title");
+  //   this.trigger("link:click", song);
+  // }
+
+});
