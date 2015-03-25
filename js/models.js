@@ -76,28 +76,6 @@ var TrackCollection = Backbone.Collection.extend({
 
 });
 
-var SongCollection = Backbone.Collection.extend({
-
-  model: Track,
-
-  initialize: function() {//FavoriteCollection down below
-    this.favorites = new FavoriteCollection();
-  },
-
-  loadSongs: function(genre) {
-    SC.get('/tracks', { genres: genre }, function(tracks) {
-      this.reset(tracks);
-    }.bind(this));
-  },
-
-  search: function(query) {
-    SC.get('/tracks', { q: query }, function(tracks) {
-      this.reset(tracks);
-    }.bind(this));
-  }
-
-});
-
 // ======================  FIREBASE ====================== //
 
 var FavoriteCollection = Backbone.Firebase.Collection.extend({
@@ -105,5 +83,5 @@ var FavoriteCollection = Backbone.Firebase.Collection.extend({
   model: Track,
   url: "https://kt-musicapp.firebaseio.com/favorites",
 
-});;
+});
 

@@ -104,6 +104,7 @@ var GenreView = Backbone.View.extend({
 
   onLinkClick: function(e) {
     e.preventDefault();
+    // console.log(e.currentTarget);
     var genre = $(e.currentTarget).data("genre");
     this.trigger("link:click", genre);
   }

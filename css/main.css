@@ -57,7 +57,8 @@ header .nav-light .nav-home {
   margin-left: 130px;
 }
 header .nav-light .nav-home,
-header .nav-light .nav-songs {
+header .nav-light .nav-favorites,
+header .nav-light .nav-genre {
   float: left;
   width: 200px;
   height: 100%;
@@ -65,7 +66,8 @@ header .nav-light .nav-songs {
   vertical-align: bottom;
 }
 header .nav-light .nav-home a,
-header .nav-light .nav-songs a {
+header .nav-light .nav-favorites a,
+header .nav-light .nav-genre a {
   text-decoration: none;
   color: white;
   font-size: 20px;
@@ -94,30 +96,41 @@ header .nav-light .btn-glass:active {
 }
 .main {
   width: 960px;
-  height: 900px;
+  height: 100%;
   margin: auto;
   margin-top: 10px;
 }
 .main .upper {
   width: 100%;
-  height: 600px;
+  height: 100%;
   background-color: #949899;
 }
 .main .upper .upper-left {
   float: left;
-  width: 150px;
-  height: 600px;
+  width: 190px;
+  height: 100%;
 }
 .main .upper .upper-left h2 {
   font-size: 24px;
 }
-.main .upper .upper-left .genres {
-  list-style: none;
+.main .upper .upper-left .genres,
+.main .upper .upper-left .favorites-list {
+  margin: 0;
+  padding: 0;
 }
-.main .upper .upper-left .genres li a {
+.main .upper .upper-left .genres li,
+.main .upper .upper-left .favorites-list li {
+  list-style: none;
+  margin-bottom: 5px;
+}
+.main .upper .upper-left .genres li a,
+.main .upper .upper-left .favorites-list li a {
   color: white;
-  font-size: 20px;
+  font-size: 15px;
   text-decoration: none;
+}
+.main .upper .upper-left .favorites-list ul {
+  padding: 0;
 }
 .main .upper .upper-right {
   width: 770px;
@@ -125,34 +138,27 @@ header .nav-light .btn-glass:active {
   overflow: hidden;
   float: left;
 }
-.main .upper .upper-right .home .home-image {
-  width: 500px;
-  height: 300px;
-  margin: 90px;
+.main .upper .upper-right .home {
+  padding: 90px;
 }
-.main .upper .upper-right .track-list,
-.main .upper .upper-right .song-list {
+.main .upper .upper-right .track-list {
   border-collapse: collapse;
 }
-.main .upper .upper-right .track-list th,
-.main .upper .upper-right .song-list th {
+.main .upper .upper-right .track-list th {
   font-size: 15px;
   line-height: 30px;
   padding-right: 12px;
   background-color: #2bcad0;
 }
-.main .upper .upper-right .track-list .artwork img,
-.main .upper .upper-right .song-list .artwork img {
+.main .upper .upper-right .track-list .artwork img {
   width: 50px;
   height: 50px;
   color: #999;
 }
-.main .upper .upper-right .track-list tbody tr,
-.main .upper .upper-right .song-list tbody tr {
+.main .upper .upper-right .track-list tbody tr {
   background: #949899;
 }
-.main .upper .upper-right .track-list td span,
-.main .upper .upper-right .song-list td span {
+.main .upper .upper-right .track-list td span {
   padding: 0 20px;
   white-space: nowrap;
   overflow: hidden;
@@ -160,20 +166,17 @@ header .nav-light .btn-glass:active {
   max-width: 400px;
   display: inline-block;
 }
-.main .upper .upper-right .track-list td i,
-.main .upper .upper-right .song-list td i {
+.main .upper .upper-right .track-list td i {
   font-size: 28px;
   color: #2bcad0;
   margin-left: 15px;
   vertical-align: -5px;
 }
-.main .upper .upper-right .track-list td i:hover,
-.main .upper .upper-right .song-list td i:hover {
+.main .upper .upper-right .track-list td i:hover {
   color: #c1db28;
   cursor: pointer;
 }
-.main .upper .upper-right .track-list td a,
-.main .upper .upper-right .song-list td a {
+.main .upper .upper-right .track-list td a {
   text-decoration: none;
   padding-left: 15px;
   color: #c1db28;
@@ -199,42 +202,4 @@ header .nav-light .btn-glass:active {
   float: right;
   width: 300px;
   height: 100%;
-}
-.main .lower .lower-left {
-  width: 100%;
-  height: 100%;
-  float: left;
-  background-color: #949899;
-}
-.main .lower .lower-left h2 {
-  font-size: 24px;
-}
-.main .lower .lower-left .favorites-list {
-  list-style: none;
-}
-.main .lower .lower-left .favorites-list .favlist-item a {
-  color: white;
-  font-size: 20px;
-  text-decoration: none;
-}
-.main .lower .lower-right {
-  width: 760px;
-  height: 100%;
-  float: left;
-  background-color: #949899;
-}
-.main .lower .lower-right .fav-view {
-  clear: both;
-}
-.main .lower .lower-right .fav-view .song {
-  width: 150px;
-  height: 185px;
-}
-.main .lower .lower-right .fav-view .song .image {
-  width: 100px;
-  height: 100px;
-  margin: 20px;
-  border-radius: 3px;
-  padding: 5px;
-  float: left;
 }
