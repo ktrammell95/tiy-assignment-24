@@ -68,8 +68,24 @@ var TrackCollection = Backbone.Collection.extend({
     }.bind(this));
   },
 
-  loadSongs: function(title) {
-    SC.get('/tracks', { title: title }, function(tracks) {
+  search: function(query) {
+    SC.get('/tracks', { q: query }, function(tracks) {
+      this.reset(tracks);
+    }.bind(this));
+  }
+
+});
+
+var SongCollection = Backbone.Collection.extend({
+
+  model: Track,
+
+  initialize: function() {//FavoriteCollection down below
+    this.favorites = new FavoriteCollection();
+  },
+
+  loadSongs: function(genre) {
+    SC.get('/tracks', { genres: genre }, function(tracks) {
       this.reset(tracks);
     }.bind(this));
   },

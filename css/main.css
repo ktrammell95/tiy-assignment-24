@@ -57,7 +57,7 @@ header .nav-light .nav-home {
   margin-left: 130px;
 }
 header .nav-light .nav-home,
-header .nav-light .nav-genres {
+header .nav-light .nav-songs {
   float: left;
   width: 200px;
   height: 100%;
@@ -65,7 +65,7 @@ header .nav-light .nav-genres {
   vertical-align: bottom;
 }
 header .nav-light .nav-home a,
-header .nav-light .nav-genres a {
+header .nav-light .nav-songs a {
   text-decoration: none;
   color: white;
   font-size: 20px;
@@ -130,24 +130,29 @@ header .nav-light .btn-glass:active {
   height: 300px;
   margin: 90px;
 }
-.main .upper .upper-right .track-list {
+.main .upper .upper-right .track-list,
+.main .upper .upper-right .song-list {
   border-collapse: collapse;
 }
-.main .upper .upper-right .track-list th {
+.main .upper .upper-right .track-list th,
+.main .upper .upper-right .song-list th {
   font-size: 15px;
   line-height: 30px;
   padding-right: 12px;
   background-color: #2bcad0;
 }
-.main .upper .upper-right .track-list .artwork img {
+.main .upper .upper-right .track-list .artwork img,
+.main .upper .upper-right .song-list .artwork img {
   width: 50px;
   height: 50px;
   color: #999;
 }
-.main .upper .upper-right .track-list tbody tr {
+.main .upper .upper-right .track-list tbody tr,
+.main .upper .upper-right .song-list tbody tr {
   background: #949899;
 }
-.main .upper .upper-right .track-list td span {
+.main .upper .upper-right .track-list td span,
+.main .upper .upper-right .song-list td span {
   padding: 0 20px;
   white-space: nowrap;
   overflow: hidden;
@@ -155,17 +160,20 @@ header .nav-light .btn-glass:active {
   max-width: 400px;
   display: inline-block;
 }
-.main .upper .upper-right .track-list td i {
+.main .upper .upper-right .track-list td i,
+.main .upper .upper-right .song-list td i {
   font-size: 28px;
   color: #2bcad0;
   margin-left: 15px;
   vertical-align: -5px;
 }
-.main .upper .upper-right .track-list td i:hover {
+.main .upper .upper-right .track-list td i:hover,
+.main .upper .upper-right .song-list td i:hover {
   color: #c1db28;
   cursor: pointer;
 }
-.main .upper .upper-right .track-list td a {
+.main .upper .upper-right .track-list td a,
+.main .upper .upper-right .song-list td a {
   text-decoration: none;
   padding-left: 15px;
   color: #c1db28;

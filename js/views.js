@@ -11,15 +11,12 @@
 
 // ======================  NAVIGATION ====================== //
 
+
 var HomeView = Backbone.View.extend({
 
   className: "home",
   
   template: JST["home"],
-
-  // events: {
-  //   "click a" : "onLinkClick"
-  // },
 
   initialize: function() {
     this.render();
@@ -29,13 +26,6 @@ var HomeView = Backbone.View.extend({
     this.$el.html( this.template() );
     return this;
   },
-
-  // onLinkClick: function(e) {
-  //   e.preventDefault();
-  //   var link = $(e.currentTarget).data("name");
-  //   this.trigger("link:click", link);
-    // console.log("you clicked a link");
-  // }
 
 });
 
@@ -63,6 +53,7 @@ var NavView = Backbone.View.extend({
   onLinkClick: function(e) {
     e.preventDefault();
     var link = $(e.currentTarget).data("name");
+    console.log(e.currentTarget);
     this.trigger("link:click", link);
     // console.log("you clicked a link");
   }
@@ -116,32 +107,5 @@ var GenreView = Backbone.View.extend({
     var genre = $(e.currentTarget).data("genre");
     this.trigger("link:click", genre);
   }
-
-});
-
-var SongView = Backbone.View.extend({
-
-  // events: {
-  //   "click a" :"onLinkClick"
-  // },
-
-  className: "songs",
-
-  template: JST["song"],
-
-  initialize: function() {
-    this.render();
-  },
-
-  render: function() {
-    this.$el.html( this.template() );
-    return this;
-  },
-
-  // onLinkClick: function(e) {
-  //   e.preventDefault();
-  //   var song = $(e.currentTarget).data("title");
-  //   this.trigger("link:click", song);
-  // }
 
 });
