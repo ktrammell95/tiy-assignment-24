@@ -14,11 +14,13 @@ var Router = Backbone.Router.extend({
   routes: {
     ""              : "showHome",
     "favorites"     : "showFavorites",
+    "tracks/:title" : "loadFavorites",
+    "genre"         : "showGenre",
     "genre/:genre"  : "loadGenre",
   },
 
   initialize: function() {
-    this.home = new HomeView();
+    this.homeView = new HomeView();
 
     this.navView = new NavView();//create new navigation
     this.genreView = new GenreView(); //create new genre
@@ -42,32 +44,28 @@ var Router = Backbone.Router.extend({
     });
 
     $(".navigation").append(this.navView.el);
-    // $(".upper-right").append(this.home.el);
+    // $(".upper-right").append(this.homeView.el);
     // $(".upper-right").append(this.tracksView.el);
-    $(".upper-left").append(this.genreView.el);
-    $(".upper-left").append(this.favListView.el);
+    // $(".upper-left").append(this.genreView.el);
+    // $(".upper-left").append(this.favListView.el);
     // $(".search-bar").append(this.searchView.el);
 
     //listens to navigation to show pages
-   this.listenTo(this.navView, "link:click", function(options){
-     switch(options.name) {
+   this.listenTo(this.navView, "link:click", function(option){
+     switch(option.name) {
        case "favorites":
-       console.log("favorites");
+         this.showFavList();
          this.showFavorites();
        break;
-       case "genres":
-       console.log("genres");
+       case "genre":
+         this.showGenreList();
          this.showGenre();
        break;
-       // case "home":
-       // console.log("home");
-       //   this.showHome();
-       // break;
        default:
          this.showHome();
        break;
      }
-     this.navigate(options.href);
+     this.navigate(option.href);
    });
 
     this.listenTo(this.genreView, "link:click", function(genre){
@@ -77,43 +75,56 @@ var Router = Backbone.Router.extend({
     });
 
     this.listenTo(this.favListView, "link:click", function(title){
-        this.favorites.get(title);
+      // console.log(title)
+        this.showFavorites(title);
         this.navigate("tracks/" + title);
     });
  
   },
 
   showHome: function() {
-    $(".upper-right").html(this.home.el);
+    $(".upper-right").html(this.homeView.el);
   },
 
-//-----Genres
+//----- Genres -----//
+  //list of Genres for left side of screen
+  showGenreList: function() {
+    $(".upper-left").html(this.genreView.el);
+  },
+  //loads Genres to tracks
   loadGenre: function(genre) {
     // console.log(tracks);
     this.tracks.loadGenre(genre);
   },
-
+  //creates new tracks for Genre and appends them to the screen
   showGenre: function(genre) {
    if (!this.genreView) {
       this.genreView = new GenreView().render();
     }
     this.loadGenre(genre);
     $(".upper-right").html(this.tracksView.el);
-      // this.$main.html(this.genreView.el);
   },
 
-//-----Favorites
-  //  loadFavorites: function(title) {
-  //   console.log("title", title)
-  //   this.favorites.get(title);
-  // },
+//----- Favorites -----//
 
-  showFavorites: function() {
+  //list of Favorites for left side of screen
+  showFavList: function() {
+    $(".upper-left").html(this.favListView.el);
+  },
+   
+
+    //loads Favorites to tracks
+  loadFavorites: function(title) {
+    this.favorites.loadFavorites(title);
+  },
+  //creates new tracks for Genre and appends them to the screen
+  showFavorites: function(title) {
    if (!this.favListView) {
       this.favListView = new FavListView().render();
     }
-    this.favorites(title);
-    $(".upper-right").html(this.favtracksView.el);  }
+    this.loadFavorites(title);
+    $(".upper-right").html(this.favtracksView.el);  
+  }
 
 
 });
