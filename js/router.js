@@ -83,6 +83,7 @@ var Router = Backbone.Router.extend({
   },
 
   showHome: function() {
+    $(".upper-left").empty();
     $(".upper-right").html(this.homeView.el);
   },
 
@@ -93,7 +94,7 @@ var Router = Backbone.Router.extend({
   },
   //loads Genres to tracks
   loadGenre: function(genre) {
-    // console.log(tracks);
+    // console.log(genre);
     this.tracks.loadGenre(genre);
   },
   //creates new tracks for Genre and appends them to the screen
@@ -111,19 +112,19 @@ var Router = Backbone.Router.extend({
   showFavList: function() {
     $(".upper-left").html(this.favListView.el);
   },
-   
-
     //loads Favorites to tracks
-  loadFavorites: function(title) {
-    this.favorites.loadFavorites(title);
-  },
+  // loadFavorites: function(title) {
+  //   console.log(title);
+  //   // console.log(tracks);
+  //   this.favorites.loadFavorites(title);
+  // },
   //creates new tracks for Genre and appends them to the screen
   showFavorites: function(title) {
    if (!this.favListView) {
       this.favListView = new FavListView().render();
     }
-    this.loadFavorites(title);
-    $(".upper-right").html(this.favtracksView.el);  
+    // this.loadFavorites(title);
+    $(".upper-right").html(this.favtracksView.render().el);  
   }
 
 

@@ -2,7 +2,7 @@ body {
   background-color: #808080;
 }
 header {
-  width: 960px;
+  width: 1000px;
   height: 100px;
   background-color: #c1db28;
   margin: auto;
@@ -95,7 +95,7 @@ header .nav-light .btn-glass:active {
   border-style: solid;
 }
 .main {
-  width: 960px;
+  width: 1000px;
   height: 100%;
   margin: auto;
   margin-top: 10px;
@@ -133,9 +133,9 @@ header .nav-light .btn-glass:active {
   padding: 0;
 }
 .main .upper .upper-right {
-  width: 770px;
+  width: 810px;
   height: 600px;
-  overflow: hidden;
+  overflow: auto;
   float: left;
 }
 .main .upper .upper-right .home {

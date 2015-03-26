@@ -36,8 +36,9 @@ var Track = Backbone.Model.extend({
     this.collection.favorites.add({
       "id": this.get('id'), 
       "title": this.get('title'), 
-      "art_work":this.get('artwork_url'),
-      "streamable":this.get('streamable')
+      "artwork_url":this.get('artwork_url'),
+      "streamable":this.get('streamable'),
+      "stream_url":this.get('stream_url'),
     });
   },
 
@@ -64,6 +65,7 @@ var TrackCollection = Backbone.Collection.extend({
 
   loadGenre: function(genre) {
     SC.get('/tracks', { genres: genre }, function(tracks) {
+      console.log(tracks);
       this.reset(tracks);
     }.bind(this));
   },

@@ -26,7 +26,7 @@ var FavListItemView = Backbone.View.extend({
 var FavListView = Backbone.View.extend({
 
   events: {
-    "click a" :"onLinkClick"
+    "click li a" :"onLinkClick"
   },
 
   // tagName: "ul",
@@ -68,7 +68,7 @@ var FavTrackView = Backbone.View.extend({
 
   tagName: "tr",
 
-  template: JST["track"],
+  template: JST["fav_track"],
 
     events: {
     "click .play i" : "onButtonClick",
@@ -184,7 +184,7 @@ var FavTrackCollectionView = Backbone.View.extend({
 
   className: "track-list",
 
-  template: JST["track_collection"],
+  template: JST["favtrack_collection"],
 
   initialize: function() {
     this.listenTo(this.collection, "reset", function(){
