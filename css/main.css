@@ -143,6 +143,7 @@ header .nav-light .btn-glass:active {
 }
 .main .upper .upper-right .track-list {
   border-collapse: collapse;
+  margin-left: 30px;
 }
 .main .upper .upper-right .track-list th {
   font-size: 15px;
